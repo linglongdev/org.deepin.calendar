@@ -3,7 +3,7 @@ version: "1"
 package:
   id: org.dde.calendar
   name: dde-calendar
-  version: 5.13.1.1
+  version: 5.14.1.1
   kind: app
   description: |
     calendar for deepin os.
@@ -19,7 +19,7 @@ build: |
   bash ./install_dep linglong/sources "$PREFIX"
   cmake -S linglong/sources/dde-calendar -B build_dir/dde-calendar ${conf_args} \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-    -DVERSION=5.13.1.1 \
+    -DVERSION=5.14.1.1 \
     -DEXEC_DDE_CALENDAR="/usr/bin/ll-cli run org.dde.calendar --exec dde-calendar" \
     -DEXEC_DDE_CALENDAR_SERVICE="/usr/bin/ll-cli run org.dde.calendar --exec /opt/apps/org.dde.calendar/files/libexec/deepin-daemon/dde-calendar-service"
   cd build_dir/dde-calendar
@@ -28,7 +28,8 @@ build: |
 sources:
   - kind: git
     url: https://github.com/linuxdeepin/dde-calendar
-    commit: 5.13.1
+    commit: 5.14.1.1
+
   # linglong:gen_deb_source sources arm64 https://pools.uniontech.com/deepin-beige beige main community
   # linglong:gen_deb_source install libical-dev,wget
   - kind: file
@@ -191,8 +192,8 @@ sources:
     url: https://pools.uniontech.com/deepin-beige/pool/main/libz/libzstd/libzstd1_1.5.5+dfsg2-2_arm64.deb
     digest: 6c0565bb989b520550da78cd0a32ecd4d85ca57b18e75e38816afb12db3d3160
   - kind: file
-    url: https://pools.uniontech.com/deepin-beige/pool/main/l/linux-upstream/linux-libc-dev_6.8.11-g05817e39c72a-1_arm64.deb
-    digest: 09e9d38f76ca99cea347b2fe7662790f41343d2d9f1308509f6b521cd21df93d
+    url: https://pools.uniontech.com/deepin-beige/pool/main/l/linux-upstream/linux-libc-dev_23.01.00.32_arm64.deb
+    digest: 08ca844363c7494917cfd8784369774c47e2fc37a0f5b3a3a365f97051a49fdb
   - kind: file
     url: https://pools.uniontech.com/deepin-beige/pool/main/p/perl/perl-base_5.36.0-10_arm64.deb
     digest: 304683781e224018ad5ded38b86cf929281ced3eb79e456761479b7db9dbf641
