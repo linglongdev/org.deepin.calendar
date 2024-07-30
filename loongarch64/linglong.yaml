@@ -3,7 +3,7 @@ version: "1"
 package:
   id: org.dde.calendar
   name: dde-calendar
-  version: 5.14.1.1
+  version: 5.14.2.1
   kind: app
   description: |
     calendar for deepin os.
@@ -19,7 +19,7 @@ build: |
   bash ./install_dep linglong/sources "$PREFIX"
   cmake -S linglong/sources/dde-calendar -B build_dir/dde-calendar ${conf_args} \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-    -DVERSION=5.14.1.1 \
+    -DVERSION=5.14.2 \
     -DEXEC_DDE_CALENDAR="/usr/bin/ll-cli run org.dde.calendar --exec dde-calendar" \
     -DEXEC_DDE_CALENDAR_SERVICE="/usr/bin/ll-cli run org.dde.calendar --exec /opt/apps/org.dde.calendar/files/libexec/deepin-daemon/dde-calendar-service"
   cd build_dir/dde-calendar
@@ -28,7 +28,7 @@ build: |
 sources:
   - kind: git
     url: https://github.com/linuxdeepin/dde-calendar
-    commit: 5.14.1.1
+    commit: 2dd86328e0257f9833d405b49b8729302519c1c1
 
   # linglong:gen_deb_source sources loongarch64 https://pools.uniontech.com/desktop-professional eagle/1070 main
   # linglong:gen_deb_source install libical-dev,wget
