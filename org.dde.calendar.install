@@ -168,4 +168,5 @@
 /opt/apps/org.dde.calendar/files/etc/xdg
 /opt/apps/org.dde.calendar/files/etc/xdg/autostart
 /opt/apps/org.dde.calendar/files/etc/xdg/autostart/dde-calendar-service.desktop
-^/opt/apps/org.dde.calendar/files/lib/.+(?<!\.g)$
+# 排除静态链接库
+^/opt/apps/org.dde.calendar/files/lib/.+(?<!\.a)$
