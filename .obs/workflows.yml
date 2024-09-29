@@ -52,29 +52,6 @@ test_build:
             architectures:
               - aarch64
 
-    # loongarch64构建
-    - branch_package:
-        source_project: linglong:app
-        source_package: template_CI_loongarch64
-        target_project: linglong:app:CI:loongarch64
-        target_package: %{SCM_REPOSITORY_NAME}
-    - set_flags:
-        flags:
-          - type: build
-            status: enable
-            project: linglong:app:CI:loongarch64
-          - type: publish
-            status: enable
-            project: linglong:app:CI:loongarch64
-    - configure_repositories:
-        project: linglong:app:CI:loongarch64
-        repositories:
-          - name: uos_1070_repo
-            paths:
-              - target_project: linglong:app:CI
-                target_repository: uos_1070_repo
-            architectures:
-              - loongarch64
 ## TAG构建
 commit_build:
   filters:
@@ -89,9 +66,4 @@ commit_build:
         source_project: linglong:app
         source_package: template_CI_aarch64
         target_project: linglong:app:stable:aarch64
-        target_package: %{SCM_REPOSITORY_NAME}
-    - branch_package:
-        source_project: linglong:app
-        source_package: template_CI_loongarch64
-        target_project: linglong:app:stable:loongarch64
         target_package: %{SCM_REPOSITORY_NAME}
